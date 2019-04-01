@@ -2,7 +2,7 @@
 # resolver (third dim) combinations
 # records where the resolver value is not present (i.e., NA) are discarded
 get_rslv_array <- function(dat, index, imperfect, resolver) {
-  dat_na_rm <- dat[!is.na(resolver), ]
+  dat_na_rm <- dat[!is.na(dat[, resolver]), ]
   rslv <- table(dat_na_rm[[index]], dat_na_rm[[imperfect]], dat_na_rm[[resolver]])
   return(rslv)
 }
