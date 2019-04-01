@@ -4,7 +4,7 @@ get_crs_sens <- function(marg, rslv, trans_method = "probit", ci_lvl = 0.95) {
   m_ij <- apply(rslv, 1:2, sum)
   m <- sum(m_ij)
   p_ij_dot <- marg / n
-  r_ij <- rslv[, , 2] / (rslv[, , 1] +  rslv[, , 2])
+  r_ij <- rslv[, , 2] / m_ij
 
   p_ij2 <- p_ij_dot * r_ij
 
